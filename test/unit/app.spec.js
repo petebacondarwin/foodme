@@ -1,0 +1,3 @@
+describe('foodme module', function() {
+
+});

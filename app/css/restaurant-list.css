@@ -1,0 +1,17 @@
+.fm-restaurant-list {
+  min-height: 646px !important;
+}
+
+.fm-restaurant-list th:first-child {
+  width: 500px;
+}
+
+.fm-restaurant-list th {
+  width: 100px;
+}
+
+.fm-restaurant-list img {
+  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+}

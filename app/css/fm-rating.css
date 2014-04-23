@@ -1,0 +1,44 @@
+.fm-rating {
+  color: #a9a9a9;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+
+}
+
+ul.fm-rating {
+  display: inline-block;
+}
+
+.fm-rating-pointer {
+  cursor: pointer;
+}
+
+.fm-rating li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 1px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.fm-rating .fm-selected {
+  color: #000000;
+}
+
+.fm-rating .fm-hover {
+  text-shadow: white 0 0  2px,
+  white 0 0  2px,
+  white 0 0  2px,
+  white 0 0  2px,
+  blue  0 0 10px;
+}
+
+fm-rating a {
+  visibility: hidden;
+  padding-left: 7px;
+}
+
+fm-rating:hover a {
+  visibility: visible;
+}

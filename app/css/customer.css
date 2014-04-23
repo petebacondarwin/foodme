@@ -1,0 +1,7 @@
+.fm-customer-bkg {
+  background: url(../img/customer_bkg.jpg) no-repeat center;
+  opacity: 0.4;
+  height: 705px;
+  width: 940px;
+  position: absolute;
+}

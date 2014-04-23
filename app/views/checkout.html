@@ -1,0 +1,109 @@
+<div class="row fm-checkout">
+  <div class="col-md-12">
+    <div class="fm-panel">
+      <div class="fm-heading">Checkout</div>
+
+      <div class="fm-content">
+
+        <form name="form" role="form">
+
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Deliver To:</h4>
+              <div>PLACEHOLDER NAME</div>
+              <div>PLACEHOLDER ADDRESS</div>
+              <a href="#/customer">Change</a>
+            </div>
+
+            <div class="col-md-6">
+              <h4>Payment:</h4>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6">
+                    <select name="ccType" class="input-medium form-control" required>
+                      <option value="visa">Visa</option>
+                      <option value="mc">MasterCard</option>
+                      <option value="amex">Amex</option>
+                      <option value="discover">Discover</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="ccNum"
+                       placeholder="Card number"
+                       maxlength="16"
+                       class="form-control"
+                       required>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6">
+                    <input type="text" name="ccExp" placeholder="mm/yyyy"
+                           class="form-control"
+                           required maxlength="16">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" name="ccCvc" placeholder="CVC"
+                           class="form-control"
+                           maxlength="4"
+                           required>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <table class="fm-panel table table-hover table-striped">
+                <thead>
+                <tr>
+                  <th class="col-md-1">Qty</th>
+                  <th>Description</th>
+                  <th class="col-md-1">Price</th>
+                  <th class="col-md-1">Subtotal</th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><input type="number" class="form-control" value="2"></td>
+                  <td>California roll</td>
+                  <td>$10.50</td>
+                  <td>$21.00</td>
+                  <td><a href><i class="icon-remove-sign"></i></a></td>
+                </tr>
+                <tr>
+                  <td><input type="number" class="form-control" value="1"></td>
+                  <td>Spicy Yellowtail roll</td>
+                  <td>$7.55</td>
+                  <td>$7.55</td>
+                  <td><a href><i class="icon-remove-sign"></i></a></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th>Total:</th>
+                  <th>$28.55</th>
+                  <th></th>
+                </tr>
+               </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="pull-right">
+                <a href="#/menu/restaurantId" class="btn btn-default">Back to Menu</a>
+                <a href class="btn btn-danger">Clear Cart</a>
+                <button class="btn btn-primary">Purchase</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </form>

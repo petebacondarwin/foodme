@@ -1,0 +1,7 @@
+{
+  "name": "angular-foodme",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootswatch": "~3.1.1"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "angular-foodme",
+  "private": true,
+  "version": "0.0.0",
+  "description": "An AngularJS workshop",
+  "repository": "https://github.com/petebacondarwin/angular-foodme",
+  "authors": [
+    "Igor Minar",
+    "Misko Hevery",
+    "Vojta Jina",
+    "Pete Bacon Darwin"
+  ],
+  "licenses": [
+    {
+      "type": "Apache",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
+  "devDependencies": {
+    "bower": "^1.3.1",
+    "http-server": "^0.6.1",
+    "karma": "~0.10",
+    "karma-ng-html2js-preprocessor": "^0.1.0",
+    "protractor": "~0.17.0",
+    "shelljs": "^0.2.6"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server app -a localhost -p 8000",
+    "pretest": "npm install",
+    "test": "karma start test/karma.conf.js",
+    "test-single-run": "karma start test/karma.conf.js  --single-run",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor test/protractor.conf.js"
+  }
+}

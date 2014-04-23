@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Angular FoodMe</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="bower_components/bootswatch/united/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+
+      <div class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#/">FoodMe</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#/">Home</a></li>
+              <li><a href="#/how-it-works">How it works</a></li>
+              <li><a href="#/who-we-are">Who we are</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#/help">Help</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+      <div class="fm-customer-bkg img-rounded"></div>
+
+        <form class="modal-dialog" novalidate>
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h3>Get Started</h3>
+            </div>
+
+
+            <div class="modal-body">
+
+              <div class="control-group">
+                <label for="customerName" class="control-label">Your Name</label>
+                <div class="controls">
+                  <input type="text" id="customerName" placeholder="Joe Black" class="input-medium">
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label for="address" class="control-label">Delivery Address</label>
+                <div class="controls">
+                  <input type="text" id="address" placeholder="432 Wiggly Rd, Mountain View, 94043" class="input-xlarge">
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+              <button class="btn btn-primary">Find Restaurants!</button>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
