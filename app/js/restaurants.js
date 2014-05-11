@@ -7,6 +7,8 @@ angular.module('restaurants', ['customer'])
     $location.path('/customer-info');
   }
 
+  $scope.deliverTo = customerInfo;
+
   $http.get('data/restaurants.json').then(function(response) {
     $scope.restaurants = response.data;
   });
