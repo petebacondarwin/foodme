@@ -2,7 +2,7 @@ angular.module('foodme', ['ngRoute', 'customer', 'navigation'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
-    .when('/', {
+    .when('/customer-info', {
       controller: 'CustomerController',
       templateUrl: 'views/customerInfo.html'
     })

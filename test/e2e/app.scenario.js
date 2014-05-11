@@ -3,7 +3,7 @@ describe('foodme app', function() {
   describe('Customer info form', function() {
 
     beforeEach(function() {
-      browser.get('index.html');
+      browser.get('index.html#/customer-info');
     });
 
 

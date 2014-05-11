@@ -6,12 +6,12 @@ angular.module('customer', ['common/localStorage'])
 
 }])
 
-.controller('CustomerController', ['$scope', 'customerInfo',
-  function CustomerController($scope, customerInfo) {
+.controller('CustomerController', ['$scope', 'customerInfo', '$location',
+  function CustomerController($scope, customerInfo, $location) {
 
   $scope.customer = customerInfo;
 
   $scope.findRestaurants = function() {
-    alert($scope.customer.name + ' - ' + $scope.customer.address);
+    $location.path('/');
   };
 }]);
