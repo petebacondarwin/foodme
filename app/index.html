@@ -70,7 +70,8 @@
 
 
             <div class="modal-footer">
-              <button class="btn btn-primary" ng-click="findRestaurants()">Find Restaurants!</button>
+              <button class="btn btn-primary" ng-click="findRestaurants()"
+                      ng-disabled="customerForm.$invalid">Find Restaurants!</button>
             </div>
 
         </form>
