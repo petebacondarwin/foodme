@@ -78,8 +78,8 @@ describe('foodme app', function() {
 
     it('should display three restaurants', function() {
       browser.get('index.html#/');
-      expect(element(by.css('.fm-restaurant-list .fm-heading')).getText()).toEqual('3 restaurants found!');
-      expect(element.all(by.css('.fm-restaurant-list tbody tr')).count()).toEqual(3);
+      expect(element(by.css('.fm-restaurant-list .fm-heading')).getText()).toEqual('39 restaurants found!');
+      expect(element.all(by.css('.fm-restaurant-list tbody tr')).count()).toEqual(39);
     });
   });
 
