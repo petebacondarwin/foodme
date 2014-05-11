@@ -6,11 +6,11 @@ angular.module('customer', ['common/localStorage'])
 
 }])
 
-.controller('CustomerController', ['$scope', function CustomerController($scope) {
-  $scope.customer = {
-    name: "Joe Black",
-    address: "432 Wiggly Rd, Mountain View, 94043"
-  };
+.controller('CustomerController', ['$scope', 'customerInfo',
+  function CustomerController($scope, customerInfo) {
+
+  $scope.customer = customerInfo;
+
   $scope.findRestaurants = function() {
     alert($scope.customer.name + ' - ' + $scope.customer.address);
   };
