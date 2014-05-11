@@ -1,7 +1,11 @@
-angular.module('foodme', ['ngRoute', 'customer', 'navigation'])
+angular.module('foodme', ['ngRoute', 'customer', 'navigation', 'restaurants'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
+    .when('/', {
+      controller: 'RestaurantsController',
+      templateUrl: 'views/restaurant-list.html'
+    })
     .when('/customer-info', {
       controller: 'CustomerController',
       templateUrl: 'views/customerInfo.html'
