@@ -3,15 +3,30 @@ describe('customer', function() {
 
   beforeEach(module('customer'));
 
-  describe("CustomerController", function() {
-    it("should initialize the scope", inject(function($rootScope, $controller) {
-      $controller('CustomerController', { $scope: $rootScope });
-      expect($rootScope.customer).toEqual({
-        name: "Joe Black",
-        address: "432 Wiggly Rd, Mountain View, 94043"
-      });
-      expect($rootScope.findRestaurants).toEqual(jasmine.any(Function));
+  describe('CustomerController', function() {
+    var customer, scope;
+
+    beforeEach(inject(function($controller, $rootScope) {
+      customerInfo = {
+        name: 'Bob Green', address: '123 Main St; Anytown AB 12345'
+      };
+      scope = $rootScope;
+      $controller('CustomerController', {$scope: scope, customerInfo: customerInfo });
     }));
+
+
+    it('should set up customer from customerInfo service', function() {
+      expect(scope.customer.name).toEqual('Bob Green');
+      expect(scope.customer.address).toEqual('123 Main St; Anytown AB 12345');
+    });
+
+
+    it('should save customer name and address to customer', function() {
+      scope.customer.name = 'newName';
+      scope.customer.address = 'newAddress';
+      scope.$digest();
+      expect(customerInfo).toEqual({ name: 'newName', address: 'newAddress'});
+    });
   });
 
   describe("customerInfo", function() {
@@ -45,4 +60,5 @@ describe('customer', function() {
       expect(customer.address).toBe('init-address');
     });
   });
+
 });
