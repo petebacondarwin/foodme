@@ -40,45 +40,10 @@
       </div>
     </div>
   </div>
+
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
-      <div class="fm-customer-bkg img-rounded"></div>
-
-        <form class="modal-dialog" novalidate ng-controller="CustomerController" name="customerForm">
-          <div class="modal-content">
-
-            <div class="modal-header">
-              <h3>Get Started</h3>
-            </div>
-
-
-            <div class="modal-body">
-
-              <div class="control-group">
-                <label for="customerName" class="control-label">Your Name</label>
-                <div class="controls">
-                  <input type="text" id="customerName" class="input-medium" ng-model="customer.name" required>
-                </div>
-              </div>
-
-              <div class="control-group">
-                <label for="address" class="control-label">Delivery Address</label>
-                <div class="controls">
-                  <input type="text" id="address" class="input-xlarge" ng-model="customer.address" required>
-                </div>
-              </div>
-
-            </div>
-
-
-            <div class="modal-footer">
-              <button class="btn btn-primary" ng-click="findRestaurants()"
-                      ng-disabled="customerForm.$invalid">Find Restaurants!</button>
-            </div>
-
-        </form>
-
-      </div>
+      <ng-view></ng-view>
     </div>
   </div>
 </div>
