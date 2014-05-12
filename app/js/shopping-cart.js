@@ -1,6 +1,6 @@
 angular.module('shopping-cart',['common/alert'])
 
-.factory('shoppingCart', ['localStorageBinding', 'alert', function(localStorageBinding, alert) {
+.factory('shoppingCart', ['localStorageBinding', 'alert', '$q', function(localStorageBinding, alert, $q) {
   var service = {
     add: function(choice, restaurant) {
 
@@ -52,6 +52,10 @@ angular.module('shopping-cart',['common/alert'])
       service.items = [];
       service.restaurant = {};
     },
+
+    submitOrder: function(deliverTo) {
+      return $q.when(Math.floor(Math.random()*100000));
+    }
 
   };
 
