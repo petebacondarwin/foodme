@@ -11,7 +11,11 @@ angular.module('foodme', ['ngRoute', 'customer', 'navigation', 'restaurants', 'c
     })
     .when('/menu/:restaurantId', {
       controller: 'MenuController',
-      templateUrl: 'views/menu.html'
+      templateUrl: 'views/menu.html',
+      resolve: {
+        restaurant: ['currentRestaurantPromise',
+                      function(currentRestaurantPromise) { return currentRestaurantPromise(); }]
+      }
     })
      .when('/customer-info', {
       controller: 'CustomerController',

@@ -6,8 +6,22 @@ angular.module('restaurants', ['customer'])
   });
 }])
 
-.controller('MenuController', ['$scope', function($scope) {
+.factory('currentRestaurantPromise', ['restaurantsPromise', '$route', '$routeParams',
+  function(restaurantsPromise, $route, $routeParams) {
 
+  return function() {
+    return restaurantsPromise.then(function(restaurants) {
+      for(var i=0; i < restaurants.length; i++) {
+        if ( restaurants[i].id === $route.current.params.restaurantId ) {
+          return restaurants[i];
+        }
+      }
+    });
+  };
+}])
+
+.controller('MenuController', ['$scope', 'restaurant', function($scope, restaurant) {
+    $scope.restaurant = restaurant;
 }])
 
 .controller('RestaurantsController', ['$scope', 'customerInfo', '$location', 'restaurants',
