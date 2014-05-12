@@ -6,7 +6,11 @@ angular.module('foodme', ['ngRoute', 'customer', 'navigation', 'restaurants', 'c
       controller: 'RestaurantsController',
       templateUrl: 'views/restaurant-list.html'
     })
-    .when('/customer-info', {
+    .when('/menu/:restaurantId', {
+      controller: 'MenuController',
+      templateUrl: 'views/menu.html'
+    })
+     .when('/customer-info', {
       controller: 'CustomerController',
       templateUrl: 'views/customerInfo.html'
     })

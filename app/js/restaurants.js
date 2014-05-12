@@ -1,5 +1,9 @@
 angular.module('restaurants', ['customer'])
 
+.controller('MenuController', ['$scope', function($scope) {
+
+}])
+
 .controller('RestaurantsController', ['$scope', 'customerInfo', '$location', '$http',
   function($scope, customerInfo, $location, $http) {
 
