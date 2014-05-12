@@ -13,4 +13,19 @@ angular.module('restaurants', ['customer'])
     $scope.restaurants = response.data;
   });
 
+  function filterRestaurants() {
+    $scope.filteredRestaurants = [];
+    angular.forEach($scope.restaurants, function(restaurant) {
+      if ( ( !$scope.rating || restaurant.rating >= $scope.rating ) &&
+           ( !$scope.price || restaurant.price <= $scope.price ) )
+      {
+        $scope.filteredRestaurants.push(restaurant);
+      }
+    });
+  }
+
+  $scope.$watch('restaurants', filterRestaurants);
+  $scope.$watch('rating', filterRestaurants);
+  $scope.$watch('price', filterRestaurants);
+
 }]);
