@@ -4,7 +4,10 @@ angular.module('foodme', ['ngRoute', 'customer', 'navigation', 'restaurants', 'c
   $routeProvider
     .when('/', {
       controller: 'RestaurantsController',
-      templateUrl: 'views/restaurant-list.html'
+      templateUrl: 'views/restaurant-list.html',
+      resolve: {
+        restaurants: ['restaurantsPromise', function(restaurantsPromise) { return restaurantsPromise; }]
+      }
     })
     .when('/menu/:restaurantId', {
       controller: 'MenuController',

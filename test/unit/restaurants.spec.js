@@ -28,12 +28,11 @@ describe("restaurants", function() {
 
     beforeEach(module('restaurants'));
 
-    beforeEach(inject(function($controller, $rootScope, $httpBackend) {
+    beforeEach(inject(function($controller, $rootScope) {
       scope = $rootScope;
 
-      $httpBackend.expectGET('data/restaurants.json').respond(RESTAURANT_DATA);
-      $controller('RestaurantsController', {$scope: scope});
-      $httpBackend.flush();
+      $controller('RestaurantsController', {$scope: scope, restaurants: RESTAURANT_DATA});
+      scope.$digest();
     }));
 
 

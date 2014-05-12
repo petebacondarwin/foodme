@@ -1,11 +1,17 @@
 angular.module('restaurants', ['customer'])
 
+.factory('restaurantsPromise', ['$http', function($http) {
+  return $http.get('data/restaurants.json').then(function(response) {
+    return response.data;
+  });
+}])
+
 .controller('MenuController', ['$scope', function($scope) {
 
 }])
 
-.controller('RestaurantsController', ['$scope', 'customerInfo', '$location', '$http',
-  function($scope, customerInfo, $location, $http) {
+.controller('RestaurantsController', ['$scope', 'customerInfo', '$location', 'restaurants',
+  function($scope, customerInfo, $location, restaurants) {
 
   if (!customerInfo.address) {
     $location.path('/customer-info');
@@ -13,9 +19,7 @@ angular.module('restaurants', ['customer'])
 
   $scope.deliverTo = customerInfo;
 
-  $http.get('data/restaurants.json').then(function(response) {
-    $scope.restaurants = response.data;
-  });
+  $scope.restaurants = restaurants;
 
   function filterRestaurants() {
     $scope.filteredRestaurants = [];
