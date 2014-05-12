@@ -5,6 +5,7 @@ angular.module('foodme', [
   'restaurants',
   'shopping-cart',
   'checkout',
+  'thank-you',
   'common/filters',
   'common/fmDeliverTo'
 ])
@@ -29,6 +30,10 @@ angular.module('foodme', [
     .when('/checkout', {
       templateUrl: 'views/checkout.html',
       controller: 'CheckoutController'
+    })
+    .when('/thank-you', {
+      templateUrl: 'views/thank-you.html',
+      controller: 'ThankYouController'
     })
      .when('/customer-info', {
       controller: 'CustomerController',
