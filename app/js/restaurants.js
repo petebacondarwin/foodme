@@ -20,10 +20,11 @@ angular.module('restaurants', ['customer'])
   };
 }])
 
-.controller('MenuController', ['$scope', 'restaurant', 'customerInfo',
-  function($scope, restaurant, customerInfo) {
+.controller('MenuController', ['$scope', 'restaurant', 'customerInfo', 'shoppingCart',
+  function($scope, restaurant, customerInfo, shoppingCart) {
     $scope.restaurant = restaurant;
     $scope.deliverTo = customerInfo;
+    $scope.shoppingCart = shoppingCart;
 }])
 
 .controller('RestaurantsController', ['$scope', 'customerInfo', '$location', 'restaurants',
