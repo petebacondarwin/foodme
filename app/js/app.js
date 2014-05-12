@@ -1,4 +1,4 @@
-angular.module('foodme', ['ngRoute', 'customer', 'navigation', 'restaurants', 'common/filters'])
+angular.module('foodme', ['ngRoute', 'customer', 'navigation', 'restaurants', 'common/filters', 'common/fmDeliverTo'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
