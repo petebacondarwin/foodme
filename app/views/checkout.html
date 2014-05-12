@@ -93,7 +93,9 @@
               <div class="pull-right">
                 <a href="#/menu/{{restaurantId}}" class="btn btn-default">Back to Menu</a>
                 <a ng-click="shoppingCart.reset()" class="btn btn-danger">Clear Cart</a>
-                <button class="btn btn-primary">Purchase</button>
+                <button ng-click="purchase()" class="btn btn-primary">
+                  Purchase
+                </button>
               </div>
             </div>
           </div>
