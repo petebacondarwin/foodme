@@ -1,5 +1,14 @@
 describe('foodme app', function() {
 
+  beforeEach(function() {
+    browser.get('index.html');
+    browser.executeScript('window.fmTempCust = window.localStorage.getItem("fmCustomer");');
+    browser.executeScript('window.localStorage.setItem("fmCustomer", \'{ "address": "abc" }\');');
+  });
+  afterEach(function() {
+    browser.executeScript('window.localStorage.setItem("fmCustomer", window.fmTempCust);');
+  });
+
   describe('Customer info form', function() {
 
     beforeEach(function() {
@@ -52,6 +61,25 @@ describe('foodme app', function() {
 
       browser.get('index.html#/who-we-are');
       expect(activeItem.getText()).toEqual('Who we are');
+    });
+  });
+
+  describe('Restaurant List', function() {
+
+    it('should redirect to customer-info if no customer address', function() {
+      browser.executeScript('window.localStorage.removeItem("fmCustomer");');
+      browser.get('index.html#/');
+      expect(browser.getCurrentUrl()).toContain('customer-info');
+
+      browser.executeScript('window.localStorage.setItem("fmCustomer", \'{ "address": "abc" }\');');
+      browser.get('index.html#/');
+      expect(browser.getCurrentUrl()).not.toContain('customer-info');
+    });
+
+    it('should display three restaurants', function() {
+      browser.get('index.html#/');
+      expect(element(by.css('.fm-restaurant-list .fm-heading')).getText()).toEqual('3 restaurants found!');
+      expect(element.all(by.css('.fm-restaurant-list tbody tr')).count()).toEqual(3);
     });
   });
 
