@@ -21,4 +21,23 @@ describe('foodme app', function() {
     });
   });
 
+  describe('Static views', function() {
+
+    it('should show the help view at /help', function() {
+      browser.get('index.html#/help');
+      expect(element(by.css('.fm-heading')).getText()).toEqual('Help');
+    });
+
+    it('should show the "who we are" view at /who-we-are', function() {
+      browser.get('index.html#/who-we-are');
+      expect(element(by.css('.fm-heading')).getText()).toEqual('Who we are');
+    });
+
+    it('should show the "how it works" view at /how-it-works', function() {
+      browser.get('index.html#/how-it-works');
+      expect(element(by.css('.fm-heading')).getText()).toEqual('How it works');
+    });
+
+  });
+
 });
