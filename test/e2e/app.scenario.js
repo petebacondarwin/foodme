@@ -40,4 +40,19 @@ describe('foodme app', function() {
 
   });
 
+  describe('Navbar', function() {
+    it('should activate the current navbar item', function() {
+      var activeItem = element(by.css('.active'));
+
+      browser.get('index.html#/');
+      expect(activeItem.getText()).toEqual('Home');
+
+      browser.get('index.html#/how-it-works');
+      expect(activeItem.getText()).toEqual('How it works');
+
+      browser.get('index.html#/who-we-are');
+      expect(activeItem.getText()).toEqual('Who we are');
+    });
+  });
+
 });
