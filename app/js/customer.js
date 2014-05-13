@@ -1,4 +1,10 @@
-angular.module('customer', [])
+angular.module('customer', ['common/localStorage'])
+
+.factory('customerInfo', ['localStorageBinding', function(localStorageBinding) {
+
+  return localStorageBinding('fmCustomer');
+
+}])
 
 .controller('CustomerController', ['$scope', function CustomerController($scope) {
   $scope.customer = {
