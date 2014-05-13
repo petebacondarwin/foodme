@@ -1,1 +1,1 @@
-angular.module('foodme', []);
+angular.module('foodme', ['customer']);
