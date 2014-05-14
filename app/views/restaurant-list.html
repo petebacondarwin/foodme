@@ -10,26 +10,11 @@
       <div class="fm-content">
         <h5>Rating</h5>
 
-        <select ng-model="rating">
-          <option value="">Any</option>
-          <option value="1">★</option>
-          <option value="2">★★</option>
-          <option value="3">★★★</option>
-          <option value="4">★★★★</option>
-          <option value="5">★★★★★</option>
-        </select>
+        <fm-rating rating="rating"></fm-rating>
 
         <h5>Price</h5>
 
-        <select ng-model="price">
-          <option value="">Any</option>
-          <option value="1">$</option>
-          <option value="2">$$</option>
-          <option value="3">$$$</option>
-          <option value="4">$$$$</option>
-          <option value="5">$$$$$</option>
-        </select>
-
+        <fm-rating rating="price" symbol="$"></fm-rating>
 
         <h5>Cuisine</h5>
 
@@ -75,10 +60,10 @@
             <p>{{restaurant.description}}</p>
           </td>
           <td>
-            {{restaurant.rating | stars}}
+            <fm-rating rating="restaurant.rating" readonly="true"></fm-rating>
           </td>
           <td>
-            {{restaurant.price | dollars}}
+            <fm-rating rating="restaurant.price" symbol="$" readonly="true"></fm-rating>
           </td>
         </tr>
         </tbody>
