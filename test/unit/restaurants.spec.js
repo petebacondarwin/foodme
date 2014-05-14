@@ -77,5 +77,28 @@ describe("restaurants", function() {
         jasmine.objectContaining({id:'esthers'})
       ]);
     });
+
+    it('should filter by cuisine', function() {
+      expect(scope.filteredRestaurants.length).toBe(5);
+
+      scope.$apply(function() {
+        scope.cuisine = ['german'];
+      });
+
+      expect(scope.filteredRestaurants.length).toEqual(1);
+      expect(scope.filteredRestaurants).toEqual([
+        jasmine.objectContaining({id:'esthers'})
+      ]);
+
+      scope.$apply(function() {
+        scope.cuisine = ['african', 'german'];
+      });
+
+      expect(scope.filteredRestaurants.length).toEqual(2);
+      expect(scope.filteredRestaurants).toEqual([
+        jasmine.objectContaining({id:'esthers'}),
+        jasmine.objectContaining({id:'khartoum'})
+      ]);
+    });
   });
 });

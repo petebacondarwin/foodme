@@ -38,11 +38,30 @@ angular.module('restaurants', ['customer'])
 
   $scope.restaurants = restaurants;
 
+  $scope.cuisine = [];
+
+  $scope.CUISINE_OPTIONS = {
+    african: 'African',
+    american: 'American',
+    barbecue: 'Barbecue',
+    cafe: 'Cafe',
+    chinese: 'Chinese',
+    'czech/slovak': 'Czech / Slovak',
+    german: 'German',
+    indian: 'Indian',
+    japanese: 'Japanese',
+    mexican: 'Mexican',
+    pizza: 'Pizza',
+    thai: 'Thai',
+    vegetarian: 'Vegetarian'
+  };
+
   function filterRestaurants() {
     $scope.filteredRestaurants = [];
     angular.forEach($scope.restaurants, function(restaurant) {
       if ( ( !$scope.rating || restaurant.rating >= $scope.rating ) &&
-           ( !$scope.price || restaurant.price <= $scope.price ) )
+           ( !$scope.price || restaurant.price <= $scope.price ) &&
+           ( !$scope.cuisine.length || $scope.cuisine.indexOf(restaurant.cuisine) !== -1) )
       {
         $scope.filteredRestaurants.push(restaurant);
       }
@@ -52,5 +71,6 @@ angular.module('restaurants', ['customer'])
   $scope.$watch('restaurants', filterRestaurants);
   $scope.$watch('rating', filterRestaurants);
   $scope.$watch('price', filterRestaurants);
+  $scope.$watchCollection('cuisine', filterRestaurants);
 
 }]);
