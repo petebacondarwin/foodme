@@ -4,6 +4,7 @@ angular.module('foodme', [
   'navigation',
   'restaurants',
   'shopping-cart',
+  'checkout',
   'common/filters',
   'common/fmDeliverTo'
 ])
@@ -24,6 +25,10 @@ angular.module('foodme', [
         restaurant: ['currentRestaurantPromise',
                       function(currentRestaurantPromise) { return currentRestaurantPromise(); }]
       }
+    })
+    .when('/checkout', {
+      templateUrl: 'views/checkout.html',
+      controller: 'CheckoutController'
     })
      .when('/customer-info', {
       controller: 'CustomerController',
