@@ -7,7 +7,8 @@ angular.module('foodme', [
   'checkout',
   'thank-you',
   'common/filters',
-  'common/fmDeliverTo'
+  'common/fmDeliverTo',
+  'common/fmCheckboxList'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
