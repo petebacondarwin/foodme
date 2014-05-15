@@ -1,0 +1,24 @@
+
+/* New items being added (entering) the list */
+.fm-restaurant-list .ng-enter {
+  -webkit-transition: 1s ease all;
+  -moz-transition: 1s ease all;
+  -o-transition: 1s ease all;
+  transition: 1s ease all;
+  opacity: 0;
+}
+.fm-restaurant-list .ng-enter-active {
+  opacity: 1;
+}
+
+/* Items being removed (leaving) from the list */
+.fm-restaurant-list .ng-leave {
+  -webkit-transition: 0.5s ease all;
+  -moz-transition: 0.5s ease all;
+  -o-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+  opacity: 1;
+}
+.fm-restaurant-list .ng-leave-active {
+  opacity: 0;
+}

@@ -1,5 +1,6 @@
 angular.module('foodme', [
   'ngRoute',
+  'ngAnimate',
   'customer',
   'navigation',
   'restaurants',
